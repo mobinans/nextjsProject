@@ -7,6 +7,17 @@ const MyApp = ({Component, pageProps}) => {
         <React.Fragment>
             <Header/>
             <Component {...pageProps}/>
+
+            <style jsx>{`
+            @font-face {
+                font-family: 'raleway';
+                src: url('/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+            }
+
+            :global(html){
+                font-family: 'raleway';
+            }
+            `}</style>
         </React.Fragment>
     );
 };
