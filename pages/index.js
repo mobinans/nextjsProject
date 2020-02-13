@@ -1,9 +1,12 @@
 import Router from 'next/router';
+import cookies from 'nookies';
 
 const HomePage = () => null;
 
 HomePage.getInitialProps = context => {
-    const country = context.query.country || 'in';
+    const {defaultCountry} = cookies.get(context);
+
+    const country = context.query.country || defaultCountry ||'in';
 
     process.browser ?
     Router.replace('/[country]', `${country}`) :
