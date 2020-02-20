@@ -4,6 +4,7 @@ import Error from 'next/error';
 
 import Cast from '../../components/Cast';
 import CustomError from '../_error';
+import {withAuth} from '../../utils/withAuth';
 
 
 const ShowDetails = ({ show = {}, statusCode }) => {
@@ -50,4 +51,4 @@ ShowDetails.getInitialProps = async ({ query }) => {
     }
 }
 
-export default ShowDetails;
+export default withAuth(ShowDetails);
